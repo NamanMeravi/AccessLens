@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
+import Loading from "./components/Loader/Loading";
 const Start = lazy(() => import("./pages/Start"));
 const Signup = lazy(() => import("./pages/Signup"));
 const VerifyEmail = lazy(() => import("./pages/VerifyEmail"));
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     Component: Start,
   },
   {
-    path: "/dashboard/",
+    path: "/dashboard",
     element: <Dashboard />,
   },
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <Suspense fallback={<div>Loading ...</div>}>
+    <Suspense fallback={<Loading />}>
       <RouterProvider router={router} />
     </Suspense>
   );
