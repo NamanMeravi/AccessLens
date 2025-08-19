@@ -1,1 +1,64 @@
 @import "tailwindcss";
+/* @import "remixicon/fonts/remixicon.css"; */
+
+/* Hide scrollbar */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html,
+body {
+  overflow: hidden; /* Prevents scrolling and hides scrollbar */
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow-y: scroll; /* Re-enable scroll without scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* Chrome, Safari, Edge */
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Optional: Just in case */
+}
+
+/* Custom Scrollbar Styling */
+.custom-scrollbar {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #4b5563 transparent; /* Thumb and Track colors */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4b5563; /* Tailwind's gray-600 */
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #2a2f38; /* Tailwind's gray-500 on hover */
+}
+
+/* Browser style override */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px "#2A2F38" inset !important; /* your input background color */
+  -webkit-text-fill-color: #ffffff !important; /* your input text color */
+  caret-color: #ffffff;
+  transition: background-color 9999s ease-in-out 0s;
+}
