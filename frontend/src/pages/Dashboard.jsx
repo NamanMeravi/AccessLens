@@ -12,7 +12,7 @@ const Dashboard = () => {
   const [isNavBarOpen, setIsNavBarOpen] = useState(true);
   const toggleNavBar = () => setIsNavBarOpen((prev) => !prev);
   return (
-    <div className="flex relative">
+    <div className="flex relative bg-gray">
       <motion.div
         layout
         className={`bg-red-100 h-screen sticky top-0 overflow-hidden ${
@@ -24,14 +24,17 @@ const Dashboard = () => {
 
       <motion.div
         layout
-        className={`bg-[#1d2736] min-h-screen ${
+        className={`py-10 ${
+          isNavBarOpen ? "px-15" : "px-25"
+        } min-h-screen bg-gradient-to-tr from-[#121821] via-[#122543] to-[#1c2c45] ${
           isNavBarOpen ? "w-4/5" : "w-full"
         }`}
       >
         <Outlet />
       </motion.div>
+
       {!isNavBarOpen && (
-        <span className="fixed top-4 left-4">
+        <span className="fixed top-11 left-4">
           <Button2Icons
             handleOnClick={toggleNavBar}
             defaultIcon={<TbLayoutSidebarRightCollapse />}

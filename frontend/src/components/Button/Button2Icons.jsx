@@ -14,7 +14,7 @@ const Button2Icons = ({ handleOnClick, defaultIcon, hoverIcon }) => {
       onMouseLeave={() => setIsHovered(false)}
       className="text-[26px] cursor-pointer hover:text-[#baedf2] text-[#C0DADC]"
     >
-      {isHovered ? hoverIcon : defaultIcon}
+      {isHovered ? hoverIcon || defaultIcon : defaultIcon}
     </button>
   );
 };
