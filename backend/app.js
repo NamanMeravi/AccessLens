@@ -3,7 +3,8 @@ import cors from "cors";
 import cookieparser from "cookie-parser";
 import { dbConnect } from "./db/db.js"; 
 import userRouter  from "./routes/User.routes.js"; 
- 
+import ProjectRoutes from './routes/Project.routes.js'
+
 const app = express();
 
  
@@ -32,5 +33,6 @@ app.use(cookieparser()); //Parses cookies from the request and makes them availa
 
  //Defining routes
 app.use("/users", userRouter);
+app.use("/projects", ProjectRoutes);
 
 export default app;
