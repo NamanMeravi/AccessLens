@@ -95,7 +95,10 @@ const Signup = () => {
 
   return (
     <SignupSigninOutline headline={headline}>
-      <form onSubmit={handleFormSubmit} className="flex flex-col gap-4">
+      <form
+        onSubmit={handleFormSubmit}
+        className="flex flex-col items-stretch gap-4 max-w-[430px] w-full sm:w-full"
+      >
         <MyTextField
           name="name"
           label="Name"
@@ -117,8 +120,11 @@ const Signup = () => {
           value={password}
           setValue={setPassword}
         />
-        <MyButtonMain loading={loading} ButtonText="Register" />
+        <div className="mt-4">
+          <MyButtonMain loading={loading} ButtonText="Register" />
+        </div>
       </form>
+
       <AuthFooter
         linkToPage="/auth/signin"
         loading={loading}

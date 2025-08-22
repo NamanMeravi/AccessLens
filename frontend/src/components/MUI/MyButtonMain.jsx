@@ -10,6 +10,7 @@ const MyButtonMain = ({ loading, ButtonText }) => {
       variant="contained"
       disableElevation
       sx={{
+        width: "100%",
         textTransform: "capitalize",
         fontSize: "18px",
         fontWeight: "500",
