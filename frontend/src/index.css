@@ -1,8 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Macondo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-/* @import "remixicon/fonts/remixicon.css"; */
+@theme {
+  --color-twitter-blue: #1da1f2;
+  --font-roboto: "Roboto", sans-serif;
+}
+
+html {
+  font-family: var(--font-roboto);
+}
 
 /* Hide scrollbar */
 html,

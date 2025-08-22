@@ -13,6 +13,7 @@ const MyTextFieldPassword = ({
   placeholder,
   name,
   label,
+  borderRadius = 8,
   labelBgColor = "#2A2F38",
 }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -27,6 +28,8 @@ const MyTextFieldPassword = ({
   const MUITextFieldSx = {
     "& .MuiOutlinedInput-root": {
       fontSize: "18px",
+      borderRadius: `${borderRadius}px`,
+
       color: "#ffffff",
       "& fieldset": {
         borderColor: "#ffffff",

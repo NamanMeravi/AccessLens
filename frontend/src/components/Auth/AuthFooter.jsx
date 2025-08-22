@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const AuthFooter = ({ loading, linkToPage, textButtonContent, question }) => {
   return (
-    <footer className="px-5 text-white flex justify-center gap-1 mt-1">
+    <footer className="px-5 text-white flex justify-center gap-1 mt-2">
       {question}
       <button
         disabled={loading}
