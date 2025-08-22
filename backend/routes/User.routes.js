@@ -35,6 +35,21 @@ router.post(
   userController.loginUser
 );
 
+router.get(
+  "/profile",
+  // rateLimiter(MINUTE, 30),
+  authenticateUser,
+  userController.getUserProfile
+);
+
+router.patch(
+  "/email",
+  // rateLimiter(60 * MINUTE, 5),
+  [body("email").isEmail().withMessage("Invalid email"), expressValidator],
+  authenticateUser,
+  userController.editEmail
+);
+
 router.post(
   "/logout",
   // rateLimiter(60 * MINUTE, 20),
