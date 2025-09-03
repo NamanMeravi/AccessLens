@@ -1,5 +1,5 @@
 import Project from "../models/Project.model.js";
-
+import { runAccessibilityCheck } from "../utils/pa11yCheck.js";
 //  Get all projects
 export const getAllProjects = async (req, res) => {
   try {
@@ -85,6 +85,25 @@ export const deleteProject = async (req, res) => {
     }
 
     res.json({ success: true, message: "Project deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+
+// Run accessibility test for a project by ID
+export const checkProjectAccessibility = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const project = await Project.findById(id);
+
+    if (!project) {
+      return res.status(404).json({ success: false, message: "Project not found" });
+    }
+
+    const results = await runAccessibilityCheck(project.url);
+
+    res.json({ success: true, results });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
