@@ -5,6 +5,7 @@ import Loading from "./components/Loader/Loading";
 import HomeDashboard from "./components/Dashboard/HomeDashboard";
 import ProjectDashboard from "./components/Dashboard/ProjectDashboard";
 import AccountDashboard from "./components/Dashboard/AccountDashboard";
+import AuthenticatedUserOnlyWrapper from "./components/Auth/AuthenticatedUserOnlyWrapper";
 const Start = lazy(() => import("./pages/Start"));
 const Signup = lazy(() => import("./pages/Signup"));
 const VerifyEmail = lazy(() => import("./pages/VerifyEmail"));
@@ -18,7 +19,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <AuthenticatedUserOnlyWrapper>
+        <Dashboard />
+      </AuthenticatedUserOnlyWrapper>
+    ),
     children: [
       { index: true, element: <Navigate to="home" replace /> },
       { path: "home", Component: HomeDashboard },
@@ -39,7 +44,11 @@ const router = createBrowserRouter([
       { path: "signin", Component: Signin },
       {
         path: "verify-email",
-        element: <VerifyEmail />,
+        element: (
+          <AuthenticatedUserOnlyWrapper>
+            <VerifyEmail />
+          </AuthenticatedUserOnlyWrapper>
+        ),
       },
     ],
   },
