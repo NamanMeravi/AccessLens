@@ -7,31 +7,30 @@ import {
   createProject,
   updateProject,
   deleteProject,
-  checkProjectAccessibility
+  checkProjectAccessibility,
 } from "../controllers/Project.controller.js";
 
 const router = express.Router();
 
 // GET all projects
-router.get("/get",authenticateUser, getAllProjects);
+router.get("/get", authenticateUser, getAllProjects);
 
 // GET most recent project
-router.get("/recent",authenticateUser, getRecentProject);
+router.get("/recent", authenticateUser, getRecentProject);
 
 // GET projects by search (name, url, description)
-router.get("/search", authenticateUser,searchProjects);
+router.get("/search", authenticateUser, searchProjects);
 
 // POST create project
-router.post("/create", authenticateUser,createProject);
+router.post("/create", authenticateUser, createProject);
 
 // PATCH update project
-router.patch("/update/:id", authenticateUser,updateProject);
+router.patch("/update/:id", authenticateUser, updateProject);
 
 // DELETE project
-router.delete("/delete/:id", authenticateUser,deleteProject);
+router.delete("/delete/:id", authenticateUser, deleteProject);
 
 //check Accessibility
-
-router.get("/:id/accessibility", authenticateUser,checkProjectAccessibility);
+router.get("/:id/accessibility", authenticateUser, checkProjectAccessibility);
 
 export default router;

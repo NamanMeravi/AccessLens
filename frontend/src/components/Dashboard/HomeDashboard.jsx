@@ -14,8 +14,11 @@ import MyTextField from "../MUI/MyTextField";
 import DescriptionBox from "../MUI/MyDescriptionBox";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import CreateProjectModalContent from "./Project/CreateProjectModalContent";
+import { useUser } from "../../contexts/UserContext";
 
 const HomeDashboard = () => {
+  const { user } = useUser();
+
   const [openCreateProjectModal, setOpenCreateProjectModal] = useState(false);
   const [openNotificationModal, setOpenNotificationModal] = useState(false);
   const toggleCreateProjectModal = () => {
@@ -26,12 +29,13 @@ const HomeDashboard = () => {
   };
   // Submit Form handler
   const handleFormSubmit = async (e) => {};
+
   return (
     <div className="text-[#C0DADC]">
       {/* Welcome Text + Notification */}
       <header className="flex justify-between items-start pb-3 border-b-10 border-[#ff000010]">
         <div>
-          <h1 className="text-3xl font-semibold">Hello, Anish</h1>
+          <h1 className="text-3xl font-semibold">Hello, {user.name}</h1>
           <h2 className="text-[#c0dadc93]">
             Track accessibility performance of your projects here!
           </h2>
