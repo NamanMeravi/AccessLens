@@ -1,15 +1,20 @@
-import { Button, CircularProgress, IconButton } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useParams } from "react-router";
-import axios from "axios";
-import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
 import { useUser } from "../../contexts/UserContext";
+import { useState } from "react";
 import { useToast } from "../../contexts/ToastContext";
+import { useRef } from "react";
+import { useEffect } from "react";
 import MyModal from "../Other/MyModal";
+import MyButton from "../Button/MyButton";
 import LogoutModalContent from "./Account/LogoutModalContent";
+import { delay } from "../../utils/delay";
+import { isValidEmail } from "../../utils/validateEmail";
+import axios from "axios";
+import ToastAuthenticated from "../Toast/ToastAuthenticated";
+import ToastError from "../Toast/ToastError";
+import { CircularProgress } from "@mui/material";
 
 const AccountDashboard = () => {
-  let { username } = useParams();
   const { user } = useUser();
   const [email, setEmail] = useState(user?.email);
   const [isEditing, setIsEditing] = useState(false);
@@ -21,53 +26,53 @@ const AccountDashboard = () => {
 
   // Submit Form handler
   const handleFormSubmit = async (e) => {
-    // e.preventDefault();
-    // try {
-    //   setLoading(true);
-    //   await delay(1000); // Wait for 1 second
-    //   if (!isvalidEmail(email)) {
-    //     console.log("wrong format of email");
-    //     toast.open(
-    //       <ToastError
-    //         headline="Can't update email"
-    //         subHeadline="Invalid email format"
-    //       />
-    //     );
-    //     setEmail(user.email);
-    //     return;
-    //   }
-    //   const userData = { email };
-    //   const response = await axios.patch(
-    //     `${import.meta.env.VITE_BASE_URL}/users/email`,
-    //     userData,
-    //     {
-    //       headers: {
-    //         Authorization: `Bearer ${localStorage.getItem("token")}`,
-    //       },
-    //     }
-    //   );
-    //   if (response.data.success === true) {
-    //     toast.open(
-    //       <ToastAuthenticated
-    //         headline="Email updated"
-    //         subHeadline="We've updated your email"
-    //       />
-    //     );
-    //   } else {
-    //     setEmail(user.email);
-    //     console.log("");
-    //   }
-    // } catch (error) {
-    //   const errSubHeadlineMsg = error.response.data.message;
-    //   const errHeadlineMsg = "Can't change email";
-    //   toast.open(
-    //     <ToastError headline={errHeadlineMsg} subHeadline={errSubHeadlineMsg} />
-    //   );
-    //   setEmail(user.email);
-    // } finally {
-    //   setLoading(false);
-    //   setIsEditing(false);
-    // }
+    e.preventDefault();
+    try {
+      setLoading(true);
+      await delay(1000); // Wait for 1 second
+      if (!isValidEmail(email)) {
+        console.log("wrong format of email");
+        toast.open(
+          <ToastError
+            headline="Can't update email"
+            subHeadline="Invalid email format"
+          />
+        );
+        setEmail(user.email);
+        return;
+      }
+      const userData = { email };
+      const response = await axios.patch(
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/users/email`,
+        userData,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      if (response.data.success === true) {
+        toast.open(
+          <ToastAuthenticated
+            headline="Email updated"
+            subHeadline="We've updated your email"
+          />
+        );
+      } else {
+        setEmail(user.email);
+        console.log("");
+      }
+    } catch (error) {
+      const errSubHeadlineMsg = error.response.data.message;
+      const errHeadlineMsg = "Can't change email";
+      toast.open(
+        <ToastError headline={errHeadlineMsg} subHeadline={errSubHeadlineMsg} />
+      );
+      setEmail(user.email);
+    } finally {
+      setLoading(false);
+      setIsEditing(false);
+    }
   };
 
   // To focus in input as soon as editing begins
@@ -88,23 +93,8 @@ const AccountDashboard = () => {
     <main className="">
       <header className="flex gap-4 mb-8 items-center justify-start">
         {/* Back button */}
-        <NavLink to={`/dashboard/${username}`}>
-          <IconButton
-            aria-label="delete"
-            sx={{
-              padding: 0,
-              color: "white",
-              position: "relative",
-              "&:hover": {
-                fontWeight: "900",
-                left: "-5px",
-                color: "#4294FF",
-                backgroundColor: "transparent", // or any subtle hover background
-              },
-            }}
-          >
-            <i className="ri-arrow-left-long-line text-inherit"></i>
-          </IconButton>
+        <NavLink to={`/dashboard/home`}>
+          <i className="ri-arrow-left-long-line text-white text-[20px] inline-block transform origin-center hover:scale-120 transition-transform duration-300 ease-in-out hover:text-[#ffffff72]"></i>
         </NavLink>
 
         {/* Title of page */}
@@ -127,7 +117,7 @@ const AccountDashboard = () => {
             <MyModal
               width={550}
               btn={
-                <Button
+                <MyButton
                   variant="outlined"
                   sx={{
                     textTransform: "capitalize",
@@ -141,7 +131,7 @@ const AccountDashboard = () => {
                   }}
                 >
                   Log Out
-                </Button>
+                </MyButton>
               }
             >
               <span className="mx-auto p-4 h-20 w-20 bg-[#B6013E] rounded-full overflow-hidden flex items-center justify-center">

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Macondo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
-
+@import "remixicon/fonts/remixicon.css";
 @theme {
   --color-twitter-blue: #1da1f2;
   --font-roboto: "Roboto", sans-serif;
@@ -188,4 +188,9 @@ input:-webkit-autofill:active {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* body bg */
+body {
+  background-color: #1a1728;
 }

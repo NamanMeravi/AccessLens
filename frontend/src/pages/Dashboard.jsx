@@ -12,10 +12,10 @@ const Dashboard = () => {
   const [isNavBarOpen, setIsNavBarOpen] = useState(true);
   const toggleNavBar = () => setIsNavBarOpen((prev) => !prev);
   return (
-    <div className="flex relative bg-gray">
+    <div className="flex relative bg-[#1a1728]">
       <motion.div
         layout
-        className={`bg-red-100 h-screen sticky top-0 overflow-hidden ${
+        className={`0 h-screen sticky top-0 overflow-hidden ${
           isNavBarOpen ? "w-1/5" : "w-0"
         }`}
       >
