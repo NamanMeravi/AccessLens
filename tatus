@@ -1,0 +1,142 @@
+[33mcommit fe7b0cec9b838ed413e034e9b8fb93cb350f1f7a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfrontend/auth-backend-connect[m[33m)[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Fri Aug 22 12:28:42 2025 +0530
+
+    feat(frontend): Add responsiveness to signin and signup pages
+
+[33mcommit f910966226047167a2570db5e9f2efe8cbec56be[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 0fedb7e 4b777e8
+Author: Anish Dhomase <127585174+AnishDhomase@users.noreply.github.com>
+Date:   Thu Aug 21 21:18:11 2025 +0530
+
+    Merge pull request #4 from NamanMeravi/frontend/dashboard
+    
+    Frontend: Add user dashboard page
+
+[33mcommit 4b777e82489d18b1612e510903129106acfcf83c[m
+Merge: acd2c8e 0fedb7e
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Thu Aug 21 21:15:27 2025 +0530
+
+    Merge branch 'main' into frontend/dashboard
+
+[33mcommit acd2c8ec8be6a522495c64ba0a5305ecba287608[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Thu Aug 21 21:09:08 2025 +0530
+
+    feat(frontend): Implement dashboard functionalities
+
+[33mcommit 0fedb7ee067af5e0c626deba2659a7cbde25e113[m
+Merge: de232f9 48bb910
+Author: NamanMeravi <129316205+NamanMeravi@users.noreply.github.com>
+Date:   Thu Aug 21 15:09:42 2025 +0530
+
+    Merge pull request #3 from NamanMeravi/feature/backend-project
+    
+    feat(project): implement Project schema with CRUD operations and sear…
+
+[33mcommit 48bb9100c652383c54dc219bb970e228e1c43d66[m
+Author: NamanMeravi <namanmeravi0@gmail.com>
+Date:   Thu Aug 21 15:13:34 2025 +0530
+
+    feat(project): implement Project schema with CRUD operations and search functionality
+
+[33mcommit 8e2fcafd29dc658d785b2db16c94ddad74d04e7d[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Wed Aug 20 13:38:02 2025 +0530
+
+    feat(frontend): Implement dashboard navigation sidebar open and close feature
+
+[33mcommit 5822da991f5508fc43a45d2becc525d9819858aa[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Wed Aug 20 12:44:32 2025 +0530
+
+    feat(frontend): Implement dashboard navigation
+
+[33mcommit de232f9812e6b8b1193f1a8d0b972e6aedec0078[m
+Merge: 5b84858 6b59f9d
+Author: NamanMeravi <129316205+NamanMeravi@users.noreply.github.com>
+Date:   Wed Aug 20 12:17:42 2025 +0530
+
+    Merge pull request #2 from NamanMeravi/backend
+    
+    Backend
+
+[33mcommit 6b59f9d0793211507258802ca21c96935e3a3414[m
+Author: NamanMeravi <namanmeravi0@gmail.com>
+Date:   Wed Aug 20 12:21:26 2025 +0530
+
+    feat(gitignore)
+    
+    fixing some changes
+
+[33mcommit 18435c6e4ce42c676c9f88cfa97c366216dae3e4[m
+Author: NamanMeravi <namanmeravi0@gmail.com>
+Date:   Wed Aug 20 12:19:42 2025 +0530
+
+    feat(backend): initlizing backend
+    
+    implement user authentication and authorization
+
+[33mcommit 5e25b65360f0addb590a2e81e135f77b4e0642ac[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Wed Aug 20 12:13:17 2025 +0530
+
+    feat(frontend): Add custom cursor
+
+[33mcommit 1b2d0ca5b23310f8092324988dc81860d6146af1[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Wed Aug 20 11:17:12 2025 +0530
+
+    setup(frontend): Add nested routes in dashboard page
+
+[33mcommit 5b8485806d88db0ec3cf0a36c95fdd1016563aad[m
+Merge: 1c418bd 965b26e
+Author: Anish Dhomase <127585174+AnishDhomase@users.noreply.github.com>
+Date:   Tue Aug 19 18:37:02 2025 +0530
+
+    Merge pull request #1 from NamanMeravi/frontend
+    
+    Frontend: Add user signup and signin page
+
+[33mcommit 965b26e05259761380294c8a42efcae0e5d3ba6d[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Tue Aug 19 18:24:55 2025 +0530
+
+    feat(frontend): Add user signin page
+
+[33mcommit a722c16c9a3999826554f8ac75f178c6c09859e6[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Tue Aug 19 18:19:11 2025 +0530
+
+    refactor(frontend): Refactor user signup page for reusable components
+
+[33mcommit 73dfa31b81bb8a3a2bbdbcd0e07f2b1d88ce082b[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Tue Aug 19 17:54:50 2025 +0530
+
+    feat(frontend): Implement user signup page and animations
+
+[33mcommit c5c12c710f76f0d4943cae6fdae4b9fe2bf25bf6[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Tue Aug 19 17:53:38 2025 +0530
+
+    feat(frontend): Add user and toast context
+
+[33mcommit 0bf22732283b0dac45fe71a76104a24814c357cc[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Tue Aug 19 15:48:33 2025 +0530
+
+    setup(frontend): Create route structure and Add tailwind css
+
+[33mcommit 93bf1327e3835a09cd4478fdb07b07806bf25925[m
+Author: Anish Dhomase <anishdhomase@gmail.com>
+Date:   Tue Aug 19 13:00:21 2025 +0530
+
+    setup(Project): Add .gitignore file
+
+[33mcommit 1c418bd1f02efb3b46f1733496637bfe7f008f5a[m
+Author: NamanMeravi <namanmeravi0@gmail.com>
+Date:   Mon Aug 18 16:53:40 2025 +0530
+
+    chore(backend): initialize backend setup

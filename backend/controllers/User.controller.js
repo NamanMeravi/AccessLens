@@ -1,7 +1,7 @@
 import { validationResult } from "express-validator";
 
 import UserModel from "../models/User.model.js";
- 
+
 import InvalidTokenModel from "../models/invalidToken.model.js";
 import { sendVerificationCode } from "../libs/email.js";
 import EmailVerificationTokenModel from "../models/emailVerificationToken.model.js";
@@ -158,6 +158,7 @@ export const logoutUser = async (req, res, next) => {
 
 export const getUserProfile = async (req, res, next) => {
   try {
+    console.log(req.user);
     // respond with the user from the request object (set by authenticateUser middleware)
     res.status(200).json({
       success: true,

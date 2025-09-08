@@ -72,10 +72,10 @@ export const Verification_Email_Template = `
 If you didn’t request this, feel free to ignore this email — no action will be taken.</p>
 
 Thanks,<br>
-Anish Dhomase from Bin</p>
+Anish Dhomase from Access Lens</p>
           </div>
           <div class="footer">
-              <p>&copy; ${new Date().getFullYear()} Bin. All rights reserved.</p>
+              <p>&copy; ${new Date().getFullYear()} Access Lens. All rights reserved.</p>
           </div>
       </div>
   </body>

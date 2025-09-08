@@ -1,7 +1,7 @@
 import { Verification_Email_Template } from "./emailTemplates.js";
 
 import nodemailer from "nodemailer";
-import { getMySecretPass } from "./getMySecretPass.js";
+import { getMySecretPass, getMySecretSenderEmail } from "./emailSecrets.js";
 
 // Sender Info
 export const transporter = nodemailer.createTransport({
@@ -9,7 +9,7 @@ export const transporter = nodemailer.createTransport({
   port: 587,
   secure: false, // true for 465, false for other ports
   auth: {
-    user: "namanmeravi0@gmail.com ",
+    user: getMySecretSenderEmail(),
     pass: getMySecretPass(),
   },
 });
