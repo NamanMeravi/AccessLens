@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Button, TextField } from "@mui/material";
 import { Link, useNavigate } from "react-router";
-import { useContext } from "react";
 import axios from "axios";
 import { useState } from "react";
 
@@ -67,7 +66,7 @@ const VerifyEmail = () => {
         toast.open(<ToastEmailVerified />);
 
         await delay(2000); // Wait for 2 second
-        navigate(`/dashboard/${user.name}`);
+        navigate(`/dashboard/home`);
         return;
       } else {
         console.log("");

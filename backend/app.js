@@ -4,9 +4,6 @@ import cookieparser from "cookie-parser";
 import { dbConnect } from "./db/db.js";
 import userRouter from "./routes/User.routes.js";
 import ProjectRoutes from "./routes/Project.routes.js";
-import { dbConnect } from "./db/db.js";
-import userRouter from "./routes/User.routes.js";
-import ProjectRoutes from "./routes/Project.routes.js";
 import emailRouter from "./routes/email.routes.js";
 
 const app = express();
