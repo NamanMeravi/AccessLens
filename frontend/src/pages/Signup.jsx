@@ -11,6 +11,8 @@ import MyTextField from "../components/MUI/MyTextField";
 import MyTextFieldPassword from "../components/MUI/MyTextFieldPassword";
 import MyButtonMain from "../components/MUI/MyButtonMain";
 import AuthFooter from "../components/Auth/AuthFooter";
+import ToastOTPSent from "../components/Toast/ToastOTPSent";
+import ToastAuthenticated from "../components/Toast/ToastAuthenticated";
 
 const headline = "Create account";
 

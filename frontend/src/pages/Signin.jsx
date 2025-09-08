@@ -50,17 +50,17 @@ const Signin = () => {
       const userData = { email, password };
 
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/users/login`,
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/users/login`,
         userData
       );
 
       if (response.data.success === true) {
         toast.open(<ToastLogin />);
-        const { token, user } = response.data.data;
+        const { token } = response.data.data;
         localStorage.setItem("token", token);
 
         await delay(2000); // Wait for 1 second
-        navigate(`/dashboard/${user.name}`);
+        navigate(`/dashboard`);
       } else {
         console.log("Error");
       }
